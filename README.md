@@ -1,15 +1,25 @@
 # ✋Gestura: AI-Powered Sign Language Translation 🤖
-🚀This project aims to create a sign language translator using machine learning techniques and Python programming. The application utilizes various modules, primarily Mediapipe, Landmark, and Random Forest algorithms to interpret and translate sign language gestures into text or spoken language.🧏‍♂️🔤
+🚀**Gestura** is an AI-powered real-time translator that converts hand gestures from sign language into **text** and **speech**, aiming to bridge communication gaps for the hearing and speech impaired.
+
+Built using **Python**, **MediaPipe**, **OpenCV**, and a **Random Forest classifier**, this project brings machine learning and accessibility together in a meaningful way. .🧏‍♂️🔤
 
 ## 🌟Project Overview
-Sign language is a crucial form of communication for individuals with hearing impairments. This project focuses on bridging the communication gap by creating a tool that can interpret sign language gestures in real-time and convert them into understandable text or speech.
+Sign language is vital for millions worldwide, but the language barrier limits its understanding among non-signers. **Gestura** addresses this issue by using computer vision and machine learning to interpret hand gestures in real time and translate them into spoken or written language.
   
 ## 👨‍💻Features
- -✅Real-time sign language recognition: Captures hand gestures using the Mediapipe library to track landmarks and movements. 📹  
- -✅ Landmark analysis: Utilizes Landmark module to extract key points and gestures from hand movements.🌍 
- -✅ Machine learning translation: Employs Random Forest algorithm to classify and interpret gestures into corresponding text or spoken language.🗣️ 
-  
-## 🌟Usage
+ -✅Real-time sign recognition:Captures hand gestures using a webcam and processes them using MediaPipe’s hand landmark detection . 📹  
+ -✅ Landmark Extraction & Gesture Analysis: Uses hand keypoints to identify specific gesture patterns .🌍 
+ -✅ Machine learning translation: A **Random Forest model** classifies recognized gestures and maps them to corresponding text.🗣️ 
+ -✅Text-to-Speech Output: Integrates speech synthesis to voice out the translated gesture  📹.
+
+## ⚙️ Tech Stack
+
+- **Languages:** Python  
+- **Libraries/Tools:** MediaPipe, OpenCV, Scikit-learn, NumPy, pyttsx3 / gTTS  
+- **Algorithm:** Random Forest Classifier  
+- **Interface:** Webcam-based CLI
+
+## 🌟Getting Started
   1.🔧 Installation:
   ```
    #Clone the repository
@@ -32,8 +42,8 @@ Sign language is a crucial form of communication for individuals with hearing im
    
   3. Interact with the translator :
    - Activate the camera for real-time gesture recognition.
-   - Perform sign language gestures in front of the camera.
-
+   - Perform a supported hand gesture.
+   - Watch it translate to text or hear it via text-to-speech
 ## 🌟Screenshots🎨 
   ### Account Page
 ![Screenshot (50)](https://github.com/Shristirajpoot/Gestura/blob/main/Screenshot%202025-01-28%20105641.png)
@@ -58,7 +68,11 @@ Sign language is a crucial form of communication for individuals with hearing im
 
 [![Watch the demo](https://img.youtube.com/vi/sVI3OwGbkoI/0.jpg)](https://www.youtube.com/watch?v=sVI3OwGbkoI)
 
- 
+ ## 🛠️ What I Learned
+-Implementing computer vision with MediaPipe
+-Applying machine learning for gesture classification
+-Building accessibility-focused real-time applications
+-Understanding model training, preprocessing, and inference with live inputs
 ## 📜Project Report
 🔓 For detailed insights, analysis, and findings, refer to the Project Report provided in the repository.
   
