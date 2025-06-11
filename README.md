@@ -1,80 +1,132 @@
-# ✋Gestura: AI-Powered Sign Language Translation 🤖
-🚀**Gestura** is an AI-powered real-time translator that converts hand gestures from sign language into **text** and **speech**, aiming to bridge communication gaps for the hearing and speech impaired.
+# ✋ Gestura – Bridging Silence with AI 🤖  
+> A real-time sign-language translator made with ❤️ using **Python, MediaPipe & OpenCV**
 
-Built using **Python**, **MediaPipe**, **OpenCV**, and a **Random Forest classifier**, this project brings machine learning and accessibility together in a meaningful way. .🧏‍♂️🔤
+![GitHub Repo stars](https://img.shields.io/github/stars/Shristirajpoot/Gestura?style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/Shristirajpoot/Gestura?color=brightgreen)
+![Built with](https://img.shields.io/badge/Built%20with-Python%20%7C%20MediaPipe%20%7C%20OpenCV-blue)
 
-## 🌟Project Overview
-Sign language is vital for millions worldwide, but the language barrier limits its understanding among non-signers. **Gestura** addresses this issue by using computer vision and machine learning to interpret hand gestures in real time and translate them into spoken or written language.
+---
+
+## 🌟 Overview
+**Gestura** is an AI-powered application that captures hand gestures via webcam, recognises American Sign Language (ASL) signs in real-time, and instantly converts them into text **and** speech. It leverages **MediaPipe** for landmark detection, a **Random Forest** model for classification, and Python’s text-to-speech engines to give voice to every gesture.
+
+---
+
+## 🎥 Demo Video  
+📺 **Watch the full walkthrough:**  
+[![Gestura – Demo](https://img.youtube.com/vi/sVI3OwGbkoI/0.jpg)](https://youtu.be/sVI3OwGbkoI)
+
+> 🔗 *Click the image or [watch on YouTube](https://youtu.be/sVI3OwGbkoI)*
   
-## 👨‍💻Features
- -✅Real-time sign recognition:Captures hand gestures using a webcam and processes them using MediaPipe’s hand landmark detection . 📹  
- -✅ Landmark Extraction & Gesture Analysis: Uses hand keypoints to identify specific gesture patterns .🌍 
- -✅ Machine learning translation: A **Random Forest model** classifies recognized gestures and maps them to corresponding text.🗣️ 
- -✅Text-to-Speech Output: Integrates speech synthesis to voice out the translated gesture  📹.
 
-## ⚙️ Tech Stack
+---
 
-- **Languages:** Python  
-- **Libraries/Tools:** MediaPipe, OpenCV, Scikit-learn, NumPy, pyttsx3 / gTTS  
-- **Algorithm:** Random Forest Classifier  
-- **Interface:** Webcam-based CLI
+## 🎨 Features
+- ✋ **Real-time sign detection** with webcam input  
+- 🧠 **Landmark extraction & ML classification** (Random Forest)  
+- 📝 **Instant text output** for each recognised sign  
+- 🔊 **Text-to-speech synthesis** for audible translation  
+- 🌗 **Light / Dark UI** (HTML + CSS front-end)  
+- 🗂 **User dashboard** with profile, feedback & usage stats  
+- 🎥 Built-in demo video and screenshots for quick preview  
 
-## 🌟Getting Started
-  1.🔧 Installation:
-  ```
-   #Clone the repository
-   git clone https://github.com/Shristirajpoot/Gestura.git
-   
-   #Navigate to the project directory
-   cd sign-language-detector-flask-python
-  ```
-  
-  2. **Install the required dependencies** using the following command:
+---
 
-  ```bash
-    pip install -r requirements.txt
-  ```
-   
-  3. Run the application:
-  ```
-   python sign-language-detector-flask-python.py
-  ```
-   
-  3. Interact with the translator :
-   - Activate the camera for real-time gesture recognition.
-   - Perform a supported hand gesture.
-   - Watch it translate to text or hear it via text-to-speech
-## 🌟Screenshots🎨 
-  ### Account Page
-![Screenshot (50)](https://github.com/Shristirajpoot/Gestura/blob/main/Screenshot%202025-01-28%20105641.png)
+## 📂 Project Structure
+```plaintext
+Gestura/
+├── app.py                     # Flask / streamlit app runner
+├── collect_imgs.py            # Script: capture images for dataset
+├── create_dataset.py          # Build training data from captures
+├── train_classifier.py        # Train Random Forest model
+├── inference_classifier.py    # Real-time inference loop
+├── requirements.txt           # Python dependencies
+│
+├── templates/                 # *.html pages (home, login, dashboard…)
+│   ├── index.html
+│   ├── login.html
+│   ├── register.html
+│   ├── dashboard.html
+│   ├── contact.html
+│   └── ...
+│
+├── static/
+│   ├── main.css               # Global styles
+│   ├── main.js                # Front-end logic
+│   ├── images/                # Backgrounds, icons
+│   └── hand-signs-of-the-ASL-Language.png
+│
+├── model.p                    # Trained Random Forest pickle
+├── data.pickle                # Landmark encoder
+├── demo (2).mp4               # Local demo video
+└── README.md                  # You’re reading it!
+```
+| Account  | Home |
+|-----------|------------|
+| ![Home](./Screenshot%202025-01-28%20105641.png) | ![Login](./Screenshot%202025-01-30%20221835.png) |
 
-  ### Home Page
-![Screenshot (104)](https://github.com/Shristirajpoot/Gestura/blob/main/Screenshot%202025-01-30%20221835.png)
-### Login Page
-![Screenshot (104)](https://github.com/Shristirajpoot/Gestura/blob/main/Screenshot%202025-01-30%20221905.png)
+| Login | About |
+|----------|----------|
+| ![Dashboard](./Screenshot%202025-01-30%20221905.png) | ![Feedback](./Screenshot%202025-01-30%20221937.png) |
 
-###  📸Dashboard Page
-![Screenshot (104)](https://github.com/Shristirajpoot/Gestura/blob/main/Screenshot%202025-01-30%20221937.png)
+| Feedback  |  Database |
+|-------------|---------------|
+| ![Camera](./Screenshot%202025-01-30%20222018.png) | ![Settings](./Screenshot%202025-01-30%20222513.png) |
 
-### Feedback Page
-![Screenshot (104)](https://github.com/Shristirajpoot/Gestura/blob/main/Screenshot%202025-01-30%20222018.png)
-### Tables Page
-![Screenshot (104)](https://github.com/Shristirajpoot/Gestura/blob/main/Screenshot%202025-01-30%20222513.png)
+| Camera Page |
+|--------------|
+| ![Profile](./Screenshot%202025-01-30%20224408.png) |
 
-  ### 🌙Camera Page
-![hand-signs-of-the-ASL-Language.png](https://github.com/Shristirajpoot/Gestura/blob/main/Screenshot%202025-01-30%20224408.png)
+---
 
-## 🎥 Demo Video
+## 🚀 Getting Started
 
-[![Watch the demo](https://img.youtube.com/vi/sVI3OwGbkoI/0.jpg)](https://www.youtube.com/watch?v=sVI3OwGbkoI)
+### 📦 Install Dependencies
 
- ## 🛠️ What I Learned
--Implementing computer vision with MediaPipe
--Applying machine learning for gesture classification
--Building accessibility-focused real-time applications
--Understanding model training, preprocessing, and inference with live inputs
-## 📜Project Report
-🔓 For detailed insights, analysis, and findings, refer to the Project Report provided in the repository.
-  
-## 🤝Contributing
-🙌 Contributions are welcome! If you'd like to contribute to this project, feel free to open issues, create pull requests, or reach out to discuss potential improvements.
+```bash
+git clone https://github.com/Shristirajpoot/Gestura.git
+cd Gestura
+python -m venv venv
+source venv/bin/activate      # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+
+▶️ Run the Application
+bash
+Copy
+Edit
+python app.py
+```
+Open http://localhost:5000 in your browser and allow webcam access.
+
+## ✋ Supported Gestures
+| ASL Sign   | Output           |
+| ---------- | ---------------- |
+| A, B, C... | Alphabet letters |
+| Hello      | “Hello”          |
+| Yes / No   | “Yes” / “No”     |
+| Thank you  | “Thank you”      |
+| Digits 0-9 | Numbers          |
+
+
+## 🛠️ Built With
+- 🐍 Python 3
+
+- 🖼 MediaPipe – hand-landmark detection
+
+- 📸 OpenCV – camera capture & image processing
+
+- 🌲 Scikit-learn Random Forest – gesture classification
+
+- 🔊 pyttsx3 / gTTS – text-to-speech
+
+- 🌐 HTML + CSS + JS – front-end templates
+
+## 👩‍💻 Author
+### Shristi Rajpoot
+- 📧 shristirajpoot369@gmail.com
+- 🔗 GitHub @Shristirajpoot
+
+## 📄 License
+This project is licensed under the MIT License — feel free to use, modify & share with attribution.
+
+### 🌟 If you find Gestura helpful, please ⭐ star the repo and spread the
